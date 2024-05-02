@@ -3,10 +3,9 @@ package main.java;
 // car class, stores more information for cars
 public class Car extends Vehicle {
     private String driveTrain;
-    private String type;
 
     // constructor
-    public Car(int year, String model, int seats, String transmission, double estimatedRentPrice, String driveTrain, String type) {
+    public Car(int year, String model, int seats, String transmission, double estimatedRentPrice, String driveTrain) {
         super(year, model, seats, transmission, estimatedRentPrice);
         this.driveTrain = driveTrain;
         
@@ -20,7 +19,7 @@ public class Car extends Vehicle {
     // gets the type of the car
     @Override
     public String getVehicleType() {
-        return "Car-" + type;
+        return "Car";
     }
 
     // list all the information of a car
