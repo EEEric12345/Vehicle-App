@@ -35,6 +35,16 @@ public class Store {
         }
     }
 
+    // lists the vehicles a user rented
+    public void getCurrentRents(User user) {
+        System.out.printf("%-5s%-20s\n", "YEAR", "MODEL");
+        for (Rent rent : rents) {
+            if (rent.getUser().equals(user)) {
+                System.out.println(rent.getVehicle().getYear() + " " + rent.getVehicle().getModel());
+            }
+        }
+    }
+
     // list all vehicles in the store(not rented out)
     public void listVehicles() {
         boolean onCar = false;
