@@ -17,6 +17,10 @@ public class Store {
 
     // rent out a vehicle from the store
     public void rentVehicle(int index, User user) {
+        if (index >= rents.size()) {
+            System.out.println("Error: Vehicle Not Found. Please Try Again!");
+            return;
+        }
         rents.get(index).setStatues(true);
         rents.get(index).setUser(user);
         System.out.println("Successfully Rented " + rents.get(index).getVehicle().getYear() + " " + rents.get(index).getVehicle().getModel() + "!");
@@ -33,15 +37,23 @@ public class Store {
                 return;
             }
         }
+        System.out.println("Error: Vehicle Not Found. Please Try Again!");
     }
 
     // lists the vehicles a user rented
     public void getCurrentRents(User user) {
-        System.out.printf("%-5s%-20s\n", "YEAR", "MODEL");
+        boolean isRent = false;
         for (Rent rent : rents) {
             if (rent.getUser().equals(user)) {
+                if (isRent == false) {
+                    isRent = true;
+                    System.out.printf("%-5s%-20s\n", "YEAR", "MODEL");
+                }
                 System.out.println(rent.getVehicle().getYear() + " " + rent.getVehicle().getModel());
             }
+        }
+        if (isRent == false) {
+            System.out.println("You Currently Have No Rents in this Store");
         }
     }
 
@@ -55,7 +67,7 @@ public class Store {
             if (rents.get(i).getStatues() == false) {
                 if (rents.get(i).getVehicle().getVehicleType().equals("Car")) {
                     if (onCar == false) {
-                        System.out.println("-----Cars-----");
+                        System.out.println("\n-----Cars-----");
                         onCar = true;
                     }
                     System.out.printf("%-5s%-10s%-25s%-25s%-10s%-15s%-15s%-15s%-15s\n", "ID", "YEAR", "TYPE", "MODEL", "SEATS", "DRIVE TRAIN", "TRANSMISSION", "EST. RENT PRICE", "RENT PRICE");
