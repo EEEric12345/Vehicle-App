@@ -45,14 +45,14 @@ public class Store {
         boolean isRent = false;
         for (Rent rent : rents) {
             if (rent.getUser().equals(user)) {
-                if (isRent == false) {
+                if (!isRent) {
                     isRent = true;
                     System.out.printf("%-5s%-20s\n", "YEAR", "MODEL");
                 }
                 System.out.println(rent.getVehicle().getYear() + " " + rent.getVehicle().getModel());
             }
         }
-        if (isRent == false) {
+        if (!isRent) {
             System.out.println("You Currently Have No Rents in this Store");
         }
     }
