@@ -1,13 +1,13 @@
 package main.java;
 
 // supercar class, stores more information for supercars
-public class SuperCar extends Vehicle {
+public class SuperCar extends Car {
     private String horsePower;
     private String accleration;
 
     // constructor
-    public SuperCar(int year, String model, int seats, String transmission, double estimatedRentPrice, String horsePower, String accleration) {
-        super(year, model, seats, transmission, estimatedRentPrice);
+    public SuperCar(int year, String model, int seats, String transmission, double estimatedRentPrice, String horsePower, String accleration, String driveTrain) {
+        super(year, model, seats, transmission, estimatedRentPrice, driveTrain);
         this.horsePower = horsePower;
         this.accleration = accleration;
         
@@ -32,7 +32,7 @@ public class SuperCar extends Vehicle {
     // list all the information of a supercar
     @Override
     public void listInfo() {
-        //System.out.printf("%-10s%-25s%-25s%-10s%-15s%-15s%-15s%-15s%-15s%-15s\n", "YEAR", "TYPE", "MODEL", TRAIN", "TRANSMISSION", "Horse Power", "Accleration", "EST. RENT PRICE", "RENT PRICE");
-        System.out.printf("%-10i%-25s%-25s%-10i%-15s%-15s%-15s%-15d%-15d\n", getYear(), getVehicleType(), getModel(), getSeats(), getTransmission(), getHorsePower(), getAccleration(), getEstimatedRentPrice(), getRentPrice());
+        //System.out.printf("%-5s%-10s%-15s%-25s%-10s%-15s%-15s%-15s%-15s%-20s%-20s\n", "ID", "YEAR", "TYPE", "MODEL", "SEATS", "DRIVE TRAIN", "TRANSMISSION", "ACCLERAION", "HORSE POWER", "EST. RENT PRICE/DAY", "RENT PRICE/DAY");
+        System.out.printf("%-10i%-15s%-25s%-10i%-15s%-15s%-15s%-15s%-20d%-20d\n", getYear(), getVehicleType(), getModel(), getSeats(), getDriveTrain(), getTransmission(), getAccleration(), getHorsePower(), getEstimatedRentPrice(), getRentPrice());
     }
 }

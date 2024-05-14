@@ -32,7 +32,7 @@ public class Truck extends Vehicle {
     // list all the information of a truck
     @Override
     public void listInfo() {
-        //System.out.printf("%-10s%-25s%-25s%-10s%-10s%-15s%-15s%-15s%-15s\n", "YEAR", "TYPE", "MODEL", "SEATS", "DOORS", "BED LENGTH", "TRANSMISSION", "EST. RENT PRICE", "RENT PRICE");
-        System.out.printf("%-10i%-25s%-25s%-10i%-10i%-15s%-15d%-15d\n", getYear(), getVehicleType(), getModel(), getSeats(), getDoors(), getBedLength(), getTransmission(), getEstimatedRentPrice(), getRentPrice());
+        //System.out.printf("%-5s%-10s%-15s%-25s%-10s%-10s%-15s%-15s%-20s%-20s\n", "ID", "YEAR", "TYPE", "MODEL", "SEATS", "DOORS", "BED LENGTH", "TRANSMISSION", "EST. RENT PRICE/DAY", "RENT PRICE/DAY");
+        System.out.printf("%-10i%-15s%-25s%-10i%-10i%-15s%-15s%-20d%-20d", getYear(), getVehicleType(), getModel(), getSeats(), getDoors(), getBedLength(), getTransmission(), getEstimatedRentPrice(), getRentPrice());
     }
 }

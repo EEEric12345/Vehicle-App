@@ -68,36 +68,41 @@ public class Store {
                 if (rents.get(i).getVehicle().getVehicleType().equals("Car")) {
                     if (onCar == false) {
                         System.out.println("\n-----Cars-----");
+                        System.out.printf("%-5s%-10s%-15s%-25s%-10s%-15s%-15s%-20s%-20s\n", "ID", "YEAR", "TYPE", "MODEL", "SEATS", "DRIVE TRAIN", "TRANSMISSION", "EST. RENT PRICE/DAY", "RENT PRICE/DAY");
                         onCar = true;
                     }
-                    System.out.printf("%-5s%-10s%-25s%-25s%-10s%-15s%-15s%-15s%-15s\n", "ID", "YEAR", "TYPE", "MODEL", "SEATS", "DRIVE TRAIN", "TRANSMISSION", "EST. RENT PRICE", "RENT PRICE");
                     System.out.printf("%-5i", i);
                     rents.get(i).getVehicle().listInfo();
                 }
                 if (rents.get(i).getVehicle().getVehicleType().equals("Motorcycle")) {
                     if (onMotorcycle == false) {
+                        System.out.println("-".repeat(150));
                         System.out.println("\n-----Motorcycles-----");
+                        System.out.printf("%-5s%-10s%-15s%-25s%-10s%-10s%-15s%-15s%-20s%-20s\n", "ID", "YEAR", "TYPE", "MODEL", "SEATS", "WEIGHT", "SEAT HEIGHT", "TRANSMISSION", "EST. RENT PRICE/DAY", "RENT PRICE/DAY");
                         onMotorcycle = true;
                     }
-                    System.out.printf("%-5s%-10s%-25s%-25s%-10s%-10s%-15s%-15s%-15s%-15s\n", "ID", "YEAR", "TYPE", "MODEL", "SEATS", "WEIGHT", "SEAT HEIGHT", "TRANSMISSION", "EST. RENT PRICE", "RENT PRICE");
                     System.out.printf("%-5i", i);
                     rents.get(i).getVehicle().listInfo();
                 }
                 if (rents.get(i).getVehicle().getVehicleType().equals("SuperCar")) {
                     if (onSuperCar == false) {
+                        System.out.println("-".repeat(150));
                         System.out.println("\n-----Super Cars-----");
+                        System.out.printf("%-5s%-10s%-15s%-25s%-10s%-15s%-15s%-15s%-15s%-20s%-20s\n", "ID", "YEAR", "TYPE", "MODEL", "SEATS", "DRIVE TRAIN", "TRANSMISSION", "ACCLERAION", "HORSE POWER", "EST. RENT PRICE/DAY", "RENT PRICE/DAY");
                         onSuperCar = true;
                     }
-                    System.out.printf("%-5s%-10s%-25s%-25s%-10s%-15s%-15s%-15s%-15s%-15s%-15s\n", "ID", "YEAR", "TYPE", "MODEL", "TRAIN", "TRANSMISSION", "Horse Power", "Accleration", "EST. RENT PRICE", "RENT PRICE");
                     System.out.printf("%-5i", i);
                     rents.get(i).getVehicle().listInfo();
                 }
                 if (rents.get(i).getVehicle().getVehicleType().equals("Truck")) {
                     if (onTruck == false) {
+                        System.out.println("-".repeat(150));
                         System.out.println("\n-----Trucks-----");
+                        System.out.printf("%-5s%-10s%-15s%-25s%-10s%-10s%-15s%-15s%-20s%-20s\n", "ID", "YEAR", "TYPE", "MODEL", "SEATS", "DOORS", "BED LENGTH", "TRANSMISSION", "EST. RENT PRICE/DAY", "RENT PRICE/DAY");
                         onTruck = true;
                     }
-                    System.out.printf("%-5s%-10s%-25s%-25s%-10s%-10s%-15s%-15s%-15s%-15s\n", "ID", "YEAR", "TYPE", "MODEL", "SEATS", "DOORS", "BED LENGTH", "TRANSMISSION", "EST. RENT PRICE", "RENT PRICE");
+                    System.out.printf("%-5i", i);
+                    rents.get(i).getVehicle().listInfo();
                 }
             }
         }
