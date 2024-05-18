@@ -17,7 +17,7 @@ public class Store {
 
     // rent out a vehicle from the store
     public void rentVehicle(int index, User user) {
-        if (index >= rents.size()) {
+        if (index >= rents.size() || index < 0) {
             System.out.println("Error: Vehicle Not Found. Please Try Again!");
             return;
         }
@@ -44,7 +44,7 @@ public class Store {
     public void getCurrentRents(User user) {
         boolean isRent = false;
         for (Rent rent : rents) {
-            if (rent.getUser().equals(user)) {
+            if (rent.getUser() == user) {
                 if (!isRent) {
                     isRent = true;
                     System.out.printf("%-5s%-20s\n", "YEAR", "MODEL");
@@ -53,7 +53,13 @@ public class Store {
             }
         }
         if (!isRent) {
-            System.out.println("You Currently Have No Rents in this Store");
+            System.out.println("You Currently Have No Rents in this Store!");
+        }
+    }
+
+    public void makeRandomPrices(int range) {
+        for (Rent rent : rents) {
+            rent.getVehicle().setRandomPrice(range);
         }
     }
 
@@ -64,44 +70,44 @@ public class Store {
         boolean onSuperCar = false;
         boolean onTruck = false;
         for (int i = 0; i < rents.size(); i++) {
-            if (rents.get(i).getStatues() == false) {
+            if (!rents.get(i).getStatues()) {
                 if (rents.get(i).getVehicle().getVehicleType().equals("Car")) {
-                    if (onCar == false) {
+                    if (!onCar) {
                         System.out.println("\n-----Cars-----");
                         System.out.printf("%-5s%-10s%-15s%-25s%-10s%-15s%-15s%-20s%-20s\n", "ID", "YEAR", "TYPE", "MODEL", "SEATS", "DRIVE TRAIN", "TRANSMISSION", "EST. RENT PRICE/DAY", "RENT PRICE/DAY");
                         onCar = true;
                     }
-                    System.out.printf("%-5i", i);
+                    System.out.printf("%-5d", i);
                     rents.get(i).getVehicle().listInfo();
                 }
                 if (rents.get(i).getVehicle().getVehicleType().equals("Motorcycle")) {
-                    if (onMotorcycle == false) {
+                    if (!onMotorcycle) {
                         System.out.println("-".repeat(150));
                         System.out.println("\n-----Motorcycles-----");
                         System.out.printf("%-5s%-10s%-15s%-25s%-10s%-10s%-15s%-15s%-20s%-20s\n", "ID", "YEAR", "TYPE", "MODEL", "SEATS", "WEIGHT", "SEAT HEIGHT", "TRANSMISSION", "EST. RENT PRICE/DAY", "RENT PRICE/DAY");
                         onMotorcycle = true;
                     }
-                    System.out.printf("%-5i", i);
+                    System.out.printf("%-5d", i);
                     rents.get(i).getVehicle().listInfo();
                 }
                 if (rents.get(i).getVehicle().getVehicleType().equals("SuperCar")) {
-                    if (onSuperCar == false) {
+                    if (!onSuperCar) {
                         System.out.println("-".repeat(150));
                         System.out.println("\n-----Super Cars-----");
                         System.out.printf("%-5s%-10s%-15s%-25s%-10s%-15s%-15s%-15s%-15s%-20s%-20s\n", "ID", "YEAR", "TYPE", "MODEL", "SEATS", "DRIVE TRAIN", "TRANSMISSION", "ACCLERAION", "HORSE POWER", "EST. RENT PRICE/DAY", "RENT PRICE/DAY");
                         onSuperCar = true;
                     }
-                    System.out.printf("%-5i", i);
+                    System.out.printf("%-5d", i);
                     rents.get(i).getVehicle().listInfo();
                 }
                 if (rents.get(i).getVehicle().getVehicleType().equals("Truck")) {
-                    if (onTruck == false) {
+                    if (!onTruck) {
                         System.out.println("-".repeat(150));
                         System.out.println("\n-----Trucks-----");
                         System.out.printf("%-5s%-10s%-15s%-25s%-10s%-10s%-15s%-15s%-20s%-20s\n", "ID", "YEAR", "TYPE", "MODEL", "SEATS", "DOORS", "BED LENGTH", "TRANSMISSION", "EST. RENT PRICE/DAY", "RENT PRICE/DAY");
                         onTruck = true;
                     }
-                    System.out.printf("%-5i", i);
+                    System.out.printf("%-5d", i);
                     rents.get(i).getVehicle().listInfo();
                 }
             }

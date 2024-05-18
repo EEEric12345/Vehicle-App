@@ -33,6 +33,6 @@ public class Motorcycle extends Vehicle {
     @Override
     public void listInfo() {
         //System.out.printf("%-5s%-10s%-15s%-25s%-10s%-10s%-15s%-15s%-20s%-20s\n", "ID", "YEAR", "TYPE", "MODEL", "SEATS", "WEIGHT", "SEAT HEIGHT", "TRANSMISSION", "EST. RENT PRICE/DAY", "RENT PRICE/DAY");
-        System.out.printf("%-10i%-15s%-25s%-10i%-10s%-15s%-15s%-20d%-20d\n", getYear(), getVehicleType(), getModel(), getSeats(), getWeight(), getSeatHeight(), getVehicleType(), getTransmission(), getEstimatedRentPrice(), getRentPrice());
+        System.out.printf("%-10d%-15s%-25s%-10d%-10s%-15s%-15s%-20f%-20f\n", getYear(), getVehicleType(), getModel(), getSeats(), getWeight(), getSeatHeight(), getTransmission(), getEstimatedRentPrice(), getRentPrice());
     }
 }
