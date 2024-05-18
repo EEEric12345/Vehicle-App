@@ -20,9 +20,4 @@ public class User {
     public String getPassword() {
         return password;
     }
-
-    // Set a new password for the user
-    public void setPassword(String password) {
-        this.password = password;
-    }
 }
