@@ -114,6 +114,9 @@ public class Main {
             case "4":
                 currentStoreIndex = -1;
                 break;
+            case "5":
+                isExit = true;
+                break;
             default:
                 System.out.println("Error: Invalid Option, Please Try Again.");
                 break;
