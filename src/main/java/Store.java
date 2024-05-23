@@ -57,6 +57,7 @@ public class Store {
         }
     }
 
+    // make random prices for all vehicles in the store
     public void makeRandomPrices(int range) {
         for (Rent rent : rents) {
             rent.getVehicle().setRandomPrice(range);
