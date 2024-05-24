@@ -20,10 +20,13 @@ public class Store {
         if (index >= rents.size() || index < 0) {
             System.out.println("Error: Vehicle Not Found. Please Try Again!");
             return;
+        } else if (!rents.get(index).getStatues()) {
+            rents.get(index).setStatues(true);
+            rents.get(index).setUser(user);
+            System.out.println("Successfully Rented " + rents.get(index).getVehicle().getYear() + " " + rents.get(index).getVehicle().getModel() + "!");
+        } else {
+            System.out.println("Error: Vehicle Already Rented Out");
         }
-        rents.get(index).setStatues(true);
-        rents.get(index).setUser(user);
-        System.out.println("Successfully Rented " + rents.get(index).getVehicle().getYear() + " " + rents.get(index).getVehicle().getModel() + "!");
     }
 
     // return a vehicle to the store
