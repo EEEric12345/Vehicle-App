@@ -25,7 +25,7 @@ public class Store {
             rents.get(index).setUser(user);
             System.out.println("Successfully Rented " + rents.get(index).getVehicle().getYear() + " " + rents.get(index).getVehicle().getModel() + "!");
         } else {
-            System.out.println("Error: Vehicle Already Rented Out");
+            System.out.println("Error: Vehicle Already Rented Out!");
         }
     }
 
